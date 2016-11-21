@@ -1,0 +1,23 @@
+{
+  "parser": "babel-eslint",
+  "extends": "standard",
+  "rules": {
+    "semi": ["error", "always"],
+    "space-before-function-paren": ["error", "never"],
+    "max-len": ["error", {
+      "code": 80,
+      "tabWidth": 2,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true,
+      "ignoreUrls": true,
+      "ignoreTrailingComments": true,
+      "ignoreRegExpLiterals": true,
+      "ignoreComments": true
+    }]
+  },
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  }
+}
