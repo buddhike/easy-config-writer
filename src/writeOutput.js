@@ -5,9 +5,9 @@ import Task from 'data.task';
 /**
  * (String, String) -> Task(String, String)
  */
-function writeOutput(to, content) {
+function writeOutput(output) {
   return new Task((reject, resolve) => {
-    fs.writeFile(to, 'utf8', content);
+    fs.writeFile(output.file, 'utf8', output.content);
   });
 }
 

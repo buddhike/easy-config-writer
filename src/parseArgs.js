@@ -18,7 +18,9 @@ const toArray = R.ifElse(R.isArrayLike, R.identity, a => [a]);
  * an object containing the values that are meaningful to rest
  * of the process.
  */
-function parseArgs(args = {}) {
+function parseArgs(args) {
+  args = args || {};
+
   if (!args.input) {
     return Either.Left(resources.ERR_MISSING_INPUT);
   }
