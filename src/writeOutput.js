@@ -1,4 +1,5 @@
 import fs from 'fs';
+import os from 'os';
 import R from 'ramda';
 import Task from 'data.task';
 
@@ -7,7 +8,10 @@ import Task from 'data.task';
  */
 function writeOutput(output) {
   return new Task((reject, resolve) => {
-    fs.writeFile(output.file, JSON.stringify(output.content), 'utf8', err => {
+    const serialize = i => JSON.stringify(i, null, 2) + os.EOL;
+    const serialized = output.content ? serialize(output.content) : '';
+
+    fs.writeFile(output.file, serialized, 'utf8', err => {
       if (err) {
         reject(err);
       } else {
